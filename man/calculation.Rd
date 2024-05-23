@@ -2,17 +2,40 @@
 % Please edit documentation in R/calculation.R
 \name{calculation}
 \alias{calculation}
-\title{calculation Class}
+\title{Calculation Class}
 \description{
-calculation Class
+Calculation Class
 
-calculation Class
+Calculation Class
 }
 \details{
 An example R6 class for performing calculations.
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{function_name}}{The name of the function.}
+
+\item{\code{parameters}}{The parameters for the calculation.}
+
+\item{\code{calculated_from}}{A vector of sources from which the calculation is derived.}
+
+\item{\code{is_recalculable}}{A boolean indicating if the calculation is recalculable.}
+
+\item{\code{sub_calculations}}{A list of sub-calculations.}
+
+\item{\code{type}}{The type of calculation.}
+
+\item{\code{filter_conditions}}{The conditions used to filter data.}
+
+\item{\code{filters}}{The filters applied to the data.}
+
+\item{\code{name}}{The name of the calculation instance.}
+}
+\if{html}{\out{</div>}}
+}
+\section{Active bindings}{
+\if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
 \item{\code{function_name}}{The name of the function.}
 
@@ -47,7 +70,7 @@ An example R6 class for performing calculations.
 \if{html}{\out{<a id="method-calculation-new"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-new}{}}}
 \subsection{Method \code{new()}}{
-Initialise the calculation class
+Initialize the calculation class
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$new(
   function_name = "",
@@ -90,19 +113,33 @@ Initialise the calculation class
 \if{html}{\out{<a id="method-calculation-add_sub_calculation"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-add_sub_calculation}{}}}
 \subsection{Method \code{add_sub_calculation()}}{
+Add a sub-calculation
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$add_sub_calculation(sub_calculation, name)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{sub_calculation}}{The sub calculation to add.}
+
+\item{\code{name}}{The name of the sub calculation.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-calculation-data_clone"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-data_clone}{}}}
 \subsection{Method \code{data_clone()}}{
+Clone the data
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$data_clone()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+A new instance of the calculation class with the same data.
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-calculation-clone"></a>}}

@@ -1,4 +1,4 @@
-#' calculation Class
+#' Calculation Class
 #'
 #' An example R6 class for performing calculations.
 #'
@@ -15,7 +15,7 @@
 calculation <- R6::R6Class(
   "calculation",
   public = list(
-    #' @description Initialise the calculation class
+    #' @description Initialize the calculation class
     #' @param function_name The name of the function. Default is an empty string.
     #' @param parameters A list of parameters for the calculation. Default is an empty list.
     #' @param calculated_from A vector of sources from which the calculation is derived. Default is an empty vector.
@@ -29,46 +29,33 @@ calculation <- R6::R6Class(
                           calculated_from = c(), is_recalculable = TRUE,
                           sub_calculations = list(), type = "", filter_conditions = list(),
                           filters = list(), name = "") {
-      self$function_name = function_name
-      self$parameters = parameters
-      self$calculated_from = c()
-      self$is_recalculable = is_recalculable
-      self$sub_calculations = sub_calculations
-      self$type = type
-      self$name = name
-      self$filter_conditions = filter_conditions
-      self$filters = filters
+      self$function_name <- function_name
+      self$parameters <- parameters
+      self$calculated_from <- calculated_from
+      self$is_recalculable <- is_recalculable
+      self$sub_calculations <- sub_calculations
+      self$type <- type
+      self$name <- name
+      self$filter_conditions <- filter_conditions
+      self$filters <- filters
     },
-    function_name = "",
-    parameters = list(), 
-    calculated_from = c(),
-    is_recalculable = TRUE,
-    sub_calculations = list(),
-    filter_conditions = list(),
-    filters = list(),
-    name = "",
-    type = ""
+    
+    #' @description Add a sub-calculation
+    #' @param sub_calculation The sub calculation to add.
+    #' @param name The name of the sub calculation.
+    add_sub_calculation = function(sub_calculation, name) {
+      self$sub_calculations[[name]] <- sub_calculation
+    },
+    
+    #' @description Clone the data
+    #' @return A new instance of the calculation class with the same data.
+    data_clone = function() {
+      ret <- calculation$new(function_name = self$function_name, parameters = self$parameters, 
+                             calculated_from = self$calculated_from, is_recalculable = self$is_recalculable,
+                             sub_calculations = self$sub_calculations, type = self$type, 
+                             filter_conditions = self$filter_conditions, filters = self$filters,
+                             name = self$name)
+      return(ret)
+    }
   )
 )
-
-#' Add a Sub Calculation
-#' @description add a sub-calculation
-#' @param sub_calculation The sub calculation to add.
-#' @param name The name of the sub calculation.
-#' @export
-calculation$set("public", "add_sub_calculation", function(sub_calculation, name) {
-  self$sub_calculations[[name]] <- sub_calculation
-})
-
-#' Clone Data
-#' @description clone the data
-#' @return A new instance of the calculation class with the same data.
-#' @export
-calculation$set("public", "data_clone", function() {
-  ret <- calculation$new(function_name = self$function_name, parameters = self$parameters, 
-                         calculated_from = self$calculated_from, is_recalculable = self$is_recalculable,
-                         sub_calculations = self$sub_calculations, type = self$type, 
-                         filter_conditions = self$filter_conditions, filters = self$filters,
-                         name = self$name)
-  return(ret)
-})
