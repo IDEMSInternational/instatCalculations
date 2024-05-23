@@ -4,6 +4,11 @@
 \alias{instat_calculation}
 \title{instat_calculation Class}
 \description{
+instat_calculation Class
+
+instat_calculation Class
+}
+\details{
 A class to store calculations.
 }
 \section{Public fields}{
@@ -46,6 +51,7 @@ A class to store calculations.
 \if{html}{\out{<a id="method-instat_calculation-new"></a>}}
 \if{latex}{\out{\hypertarget{method-instat_calculation-new}{}}}
 \subsection{Method \code{new()}}{
+Initialise the instat_calculation class
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{instat_calculation$new(
   function_exp = "",

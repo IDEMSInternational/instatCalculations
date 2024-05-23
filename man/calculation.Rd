@@ -4,6 +4,11 @@
 \alias{calculation}
 \title{calculation Class}
 \description{
+calculation Class
+
+calculation Class
+}
+\details{
 An example R6 class for performing calculations.
 }
 \section{Public fields}{
@@ -42,6 +47,7 @@ An example R6 class for performing calculations.
 \if{html}{\out{<a id="method-calculation-new"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-new}{}}}
 \subsection{Method \code{new()}}{
+Initialise the calculation class
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$new(
   function_name = "",

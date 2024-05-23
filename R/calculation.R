@@ -15,8 +15,7 @@
 calculation <- R6::R6Class(
   "calculation",
   public = list(
-    # Initialise the calculation class
-    #
+    #' @description Initialise the calculation class
     #' @param function_name The name of the function. Default is an empty string.
     #' @param parameters A list of parameters for the calculation. Default is an empty list.
     #' @param calculated_from A vector of sources from which the calculation is derived. Default is an empty vector.
@@ -53,7 +52,7 @@ calculation <- R6::R6Class(
 )
 
 #' Add a Sub Calculation
-#'
+#' @description add a sub-calculation
 #' @param sub_calculation The sub calculation to add.
 #' @param name The name of the sub calculation.
 #' @export
@@ -62,7 +61,7 @@ calculation$set("public", "add_sub_calculation", function(sub_calculation, name)
 })
 
 #' Clone Data
-#'
+#' @description clone the data
 #' @return A new instance of the calculation class with the same data.
 #' @export
 calculation$set("public", "data_clone", function() {

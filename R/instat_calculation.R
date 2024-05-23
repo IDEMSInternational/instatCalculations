@@ -17,8 +17,7 @@
 instat_calculation <- R6::R6Class(
   "instat_calculation",
   public = list(
-    # Initialise the instat_calculation class
-    #
+    #' @description Initialise the instat_calculation class
     #' @param function_exp A string passed directly to one of dplyr functions.
     #' @param type The type of calculation.
     #' @param name The name of the calculation instance.
