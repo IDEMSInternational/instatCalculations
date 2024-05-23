@@ -15,8 +15,8 @@
 calculation <- R6::R6Class(
   "calculation",
   public = list(
-    #' Initialize the calculation class
-    #'
+    # Initialize the calculation class
+    #
     #' @param function_name The name of the function. Default is an empty string.
     #' @param parameters A list of parameters for the calculation. Default is an empty list.
     #' @param calculated_from A vector of sources from which the calculation is derived. Default is an empty vector.
