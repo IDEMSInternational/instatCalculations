@@ -33,6 +33,8 @@ An example R6 class for performing calculations.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-calculation-new}{\code{calculation$new()}}
+\item \href{#method-calculation-add_sub_calculation}{\code{calculation$add_sub_calculation()}}
+\item \href{#method-calculation-data_clone}{\code{calculation$data_clone()}}
 \item \href{#method-calculation-clone}{\code{calculation$clone()}}
 }
 }
@@ -77,6 +79,24 @@ An example R6 class for performing calculations.
 }
 \if{html}{\out{</div>}}
 }
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-calculation-add_sub_calculation"></a>}}
+\if{latex}{\out{\hypertarget{method-calculation-add_sub_calculation}{}}}
+\subsection{Method \code{add_sub_calculation()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{calculation$add_sub_calculation(sub_calculation, name)}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-calculation-data_clone"></a>}}
+\if{latex}{\out{\hypertarget{method-calculation-data_clone}{}}}
+\subsection{Method \code{data_clone()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{calculation$data_clone()}\if{html}{\out{</div>}}
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-calculation-clone"></a>}}
