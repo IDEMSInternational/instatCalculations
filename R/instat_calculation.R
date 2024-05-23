@@ -48,55 +48,40 @@ instat_calculation <- R6::R6Class(
       self$before <- before
       self$adjacent_column <- adjacent_column
     },
-    name = "",
-    result_name = "",
-    result_data_frame = "",
-    type = "",
-    manipulations = list(),
-    sub_calculations = list(),
-    function_exp = "",
-    calculated_from = list(),
-    save = 0,
-    before = FALSE,
-    adjacent_column = ""
+    
+    #' @description Clone the data
+    #' @return A new instance of the instat_calculation class with the same data.
+    data_clone = function(...) {
+      ret <- instat_calculation$new(function_exp = self$function_exp, type = self$type,
+                                    name = self$name, result_name = self$result_name, 
+                                    manipulations = lapply(self$manipulations, function(x) x$data_clone()), 
+                                    sub_calculations = lapply(self$sub_calculations, function(x) x$data_clone()),
+                                    calculated_from = self$calculated_from, save = self$save)
+      return(ret)
+    },
+    
+    #' @description Get dependencies
+    #' @param depens A vector of dependencies.
+    #' @return A vector of dependencies.
+    get_dependencies = function(depens = c()) {
+      for(manip in self$manipulations) {
+        for(i in seq_along(manip$calculated_from)) {
+          ind <- which(depens == manip$calculated_from[[i]])
+          if(length(ind) == 0 || names(depens)[ind] != names(manip$calculated_from)[i]) {
+            depens <- c(depens, manip$calculated_from[i])
+          }
+        }
+      }
+      for(sub_calc in self$sub_calculations) {
+        depens <- sub_calc$get_dependencies(depens)
+      }
+      for(j in seq_along(self$calculated_from)) {
+        ind <- which(depens == self$calculated_from[[j]])
+        if(length(ind) == 0 || names(depens)[ind] != names(self$calculated_from)[j]) {
+          depens <- c(depens, self$calculated_from[j])
+        }
+      }
+      return(depens)
+    }
   )
 )
-
-#' Clone Data
-#'
-#' @return A new instance of the instat_calculation class with the same data.
-#' @export
-instat_calculation$set("public", "data_clone", function(...) {
-  ret <- instat_calculation$new(function_exp = self$function_exp, type = self$type,
-                                name = self$name, result_name = self$result_name, 
-                                manipulations = lapply(self$manipulations, function(x) x$data_clone()), 
-                                sub_calculations = lapply(self$sub_calculations, function(x) x$data_clone()),
-                                calculated_from = self$calculated_from, save = self$save)
-  return(ret)
-})
-
-#' Get Dependencies
-#'
-#' @param depens A vector of dependencies.
-#' @return A vector of dependencies.
-#' @export
-instat_calculation$set("public", "get_dependencies", function(depens = c()) {
-  for(manip in self$manipulations) {
-    for(i in seq_along(manip$calculated_from)) {
-      ind <- which(depens == manip$calculated_from[[i]])
-      if(length(ind) == 0 || names(depens)[ind] != names(manip$calculated_from)[i]) {
-        depens <- c(depens, manip$calculated_from[i])
-      }
-    }
-  }
-  for(sub_calc in self$sub_calculations) {
-    depens <- sub_calc$get_dependencies(depens)
-  }
-  for(j in seq_along(self$calculated_from)) {
-    ind <- which(depens == self$calculated_from[[j]])
-    if(length(ind) == 0 || names(depens)[ind] != names(self$calculated_from)[j]) {
-      depens <- c(depens, self$calculated_from[j])
-    }
-  }
-  return(depens)
-})
