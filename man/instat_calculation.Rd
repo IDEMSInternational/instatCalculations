@@ -11,35 +11,16 @@ instat_calculation Class
 \details{
 A class to store calculations.
 }
+\section{Methods}{
+
+\describe{
+\item{\code{get_dependencies(depens = c())}}{Get Dependencies.}
+\item{\code{data_clone(...)}}{Clone the data.}
+}
+}
+
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{function_exp}}{A string passed directly to one of dplyr functions.}
-
-\item{\code{type}}{The type of calculation.}
-
-\item{\code{name}}{The name of the calculation instance.}
-
-\item{\code{result_name}}{The name for the output produced by the calculation.}
-
-\item{\code{result_data_frame}}{The data frame that the output should go to.}
-
-\item{\code{manipulations}}{A list of calculations to be performed before sub_calculations and the main calculation.}
-
-\item{\code{sub_calculations}}{A list of calculations to be performed after manipulations.}
-
-\item{\code{calculated_from}}{A list of columns the calculation depends on.}
-
-\item{\code{save}}{An integer indicating whether the calculation and result should be saved.}
-
-\item{\code{before}}{A boolean indicating if the calculation should be performed before others.}
-
-\item{\code{adjacent_column}}{The name of the adjacent column.}
-}
-\if{html}{\out{</div>}}
-}
-\section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
 \item{\code{function_exp}}{A string passed directly to one of dplyr functions.}
 
@@ -132,6 +113,13 @@ Clone the data
 \if{html}{\out{<div class="r">}}\preformatted{instat_calculation$data_clone(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional methods to add to the function.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Returns}{
 A new instance of the instat_calculation class with the same data.
 }

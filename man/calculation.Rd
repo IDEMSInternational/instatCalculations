@@ -4,56 +4,36 @@
 \alias{calculation}
 \title{Calculation Class}
 \description{
-Calculation Class
+Represents a calculation with associated parameters, filters, and sub-calculations.
+}
+\section{Methods}{
 
-Calculation Class
+\describe{
+\item{\code{add_sub_calculation(sub_calculation, name)}}{Add a sub-calculation.}
+\item{\code{data_clone(...)}}{Clone the data.}
 }
-\details{
-An example R6 class for performing calculations.
 }
+
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{function_name}}{The name of the function.}
+\item{\code{function_name}}{Character. The name of the function.}
 
-\item{\code{parameters}}{The parameters for the calculation.}
+\item{\code{parameters}}{List. The parameters for the calculation.}
 
-\item{\code{calculated_from}}{A vector of sources from which the calculation is derived.}
+\item{\code{calculated_from}}{Character vector. Sources from which the calculation is derived.}
 
-\item{\code{is_recalculable}}{A boolean indicating if the calculation is recalculable.}
+\item{\code{is_recalculable}}{Logical. Indicates if the calculation is recalculable.}
 
-\item{\code{sub_calculations}}{A list of sub-calculations.}
+\item{\code{sub_calculations}}{List. A list of sub-calculations.}
 
-\item{\code{type}}{The type of calculation.}
+\item{\code{type}}{Character. The type of calculation.}
 
-\item{\code{filter_conditions}}{The conditions used to filter data.}
+\item{\code{filter_conditions}}{List. The conditions used to filter data.}
 
-\item{\code{filters}}{The filters applied to the data.}
+\item{\code{filters}}{List. The filters applied to the data.}
 
-\item{\code{name}}{The name of the calculation instance.}
-}
-\if{html}{\out{</div>}}
-}
-\section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{function_name}}{The name of the function.}
-
-\item{\code{parameters}}{The parameters for the calculation.}
-
-\item{\code{calculated_from}}{A vector of sources from which the calculation is derived.}
-
-\item{\code{is_recalculable}}{A boolean indicating if the calculation is recalculable.}
-
-\item{\code{sub_calculations}}{A list of sub-calculations.}
-
-\item{\code{type}}{The type of calculation.}
-
-\item{\code{filter_conditions}}{The conditions used to filter data.}
-
-\item{\code{filters}}{The filters applied to the data.}
-
-\item{\code{name}}{The name of the calculation instance.}
+\item{\code{name}}{Character. The name of the calculation instance.}
 }
 \if{html}{\out{</div>}}
 }
@@ -70,7 +50,7 @@ An example R6 class for performing calculations.
 \if{html}{\out{<a id="method-calculation-new"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-new}{}}}
 \subsection{Method \code{new()}}{
-Initialize the calculation class
+Initialize the calculation class.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$new(
   function_name = "",
@@ -88,23 +68,23 @@ Initialize the calculation class
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{function_name}}{The name of the function. Default is an empty string.}
+\item{\code{function_name}}{Character. The name of the function. Default is an empty string.}
 
-\item{\code{parameters}}{A list of parameters for the calculation. Default is an empty list.}
+\item{\code{parameters}}{List. The parameters for the calculation. Default is an empty list.}
 
-\item{\code{calculated_from}}{A vector of sources from which the calculation is derived. Default is an empty vector.}
+\item{\code{calculated_from}}{Character vector. Sources from which the calculation is derived. Default is an empty vector.}
 
-\item{\code{is_recalculable}}{A boolean indicating if the calculation is recalculable. Default is TRUE.}
+\item{\code{is_recalculable}}{Logical. Indicates if the calculation is recalculable. Default is \code{TRUE}.}
 
-\item{\code{sub_calculations}}{A list of sub-calculations. Default is an empty list.}
+\item{\code{sub_calculations}}{List. A list of sub-calculations. Default is an empty list.}
 
-\item{\code{type}}{The type of calculation. Default is an empty string.}
+\item{\code{type}}{Character. The type of calculation. Default is an empty string.}
 
-\item{\code{filter_conditions}}{The conditions used to filter data. Default is an empty list.}
+\item{\code{filter_conditions}}{List. The conditions used to filter data. Default is an empty list.}
 
-\item{\code{filters}}{The filters applied to the data. Default is an empty list.}
+\item{\code{filters}}{List. The filters applied to the data. Default is an empty list.}
 
-\item{\code{name}}{The name of the calculation instance. Default is an empty string.}
+\item{\code{name}}{Character. The name of the calculation instance. Default is an empty string.}
 }
 \if{html}{\out{</div>}}
 }
@@ -113,7 +93,7 @@ Initialize the calculation class
 \if{html}{\out{<a id="method-calculation-add_sub_calculation"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-add_sub_calculation}{}}}
 \subsection{Method \code{add_sub_calculation()}}{
-Add a sub-calculation
+Add a sub-calculation.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{calculation$add_sub_calculation(sub_calculation, name)}\if{html}{\out{</div>}}
 }
@@ -121,9 +101,9 @@ Add a sub-calculation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{sub_calculation}}{The sub calculation to add.}
+\item{\code{sub_calculation}}{An object representing the sub-calculation to add.}
 
-\item{\code{name}}{The name of the sub calculation.}
+\item{\code{name}}{Character. The name of the sub-calculation.}
 }
 \if{html}{\out{</div>}}
 }
@@ -132,11 +112,18 @@ Add a sub-calculation
 \if{html}{\out{<a id="method-calculation-data_clone"></a>}}
 \if{latex}{\out{\hypertarget{method-calculation-data_clone}{}}}
 \subsection{Method \code{data_clone()}}{
-Clone the data
+Clone the data.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{calculation$data_clone()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{calculation$data_clone(...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Additional methods to add to the function.}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Returns}{
 A new instance of the calculation class with the same data.
 }

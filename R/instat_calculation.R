@@ -13,6 +13,12 @@
 #' @field save An integer indicating whether the calculation and result should be saved.
 #' @field before A boolean indicating if the calculation should be performed before others.
 #' @field adjacent_column The name of the adjacent column.
+#' 
+#' @section Methods:
+#' \describe{
+#'   \item{\code{get_dependencies(depens = c())}}{Get Dependencies.}
+#'   \item{\code{data_clone(...)}}{Clone the data.}
+#' }
 #' @export
 instat_calculation <- R6::R6Class(
   "instat_calculation",
@@ -49,7 +55,20 @@ instat_calculation <- R6::R6Class(
       self$adjacent_column <- adjacent_column
     },
     
+    function_exp = "",
+    type = "",
+    name = "",
+    result_name = "",
+    result_data_frame = "",
+    manipulations = list(),
+    sub_calculations = list(),
+    calculated_from = list(),
+    save = 0,
+    before = FALSE,
+    adjacent_column = "",
+    
     #' @description Clone the data
+    #' @param ... Additional methods to add to the function.
     #' @return A new instance of the instat_calculation class with the same data.
     data_clone = function(...) {
       ret <- instat_calculation$new(function_exp = self$function_exp, type = self$type,
