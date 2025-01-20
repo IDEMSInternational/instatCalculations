@@ -6,7 +6,7 @@
 \alias{instatCalculations-package}
 \title{instatCalculations: Calculation system used in R-Instat}
 \description{
-Functions used in the calculation system used in R-Instat
+Functions used in the calculation system used in R-Instat.
 }
 \author{
 \strong{Maintainer}: Lily Clements \email{lily@idems.international}
