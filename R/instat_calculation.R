@@ -13,6 +13,7 @@
 #' @field save An integer indicating whether the calculation and result should be saved.
 #' @field before A boolean indicating if the calculation should be performed before others.
 #' @field adjacent_column The name of the adjacent column.
+#' @field param_list Additional parameters to read into the calculation, e.g., `.drop = TRUE` for `by` calculation.
 #' 
 #' @section Methods:
 #' \describe{
@@ -35,12 +36,14 @@ instat_calculation <- R6::R6Class(
     #' @param save An integer indicating whether the calculation and result should be saved.
     #' @param before A boolean indicating if the calculation should be performed before others.
     #' @param adjacent_column The name of the adjacent column.
+    #' @param param_list Additional parameters to read into the calculation, e.g., `.drop = TRUE` for `by` calculation.
     initialize = function(function_exp = "", type = "", name = "", result_name = "", result_data_frame = "", manipulations = list(),
-                          sub_calculations = list(), calculated_from = list(), save = 0, before = FALSE, adjacent_column = "") {
+                          sub_calculations = list(), calculated_from = list(), save = 0, before = FALSE, adjacent_column = "", param_list = list()) {
       if((type == "calculation" || type == "summary") && missing(result_name)) stop("result_name must be provided for calculation and summary types")
       if(type == "combination" && save > 0) {
         warning("combination types do not have a main calculation which can be saved. save_output will be stored as FALSE")
         save <- 0
+        #TODO Should this do something else like set save_output = TRUE for all sub_calculations?
       }
       self$function_exp <- function_exp
       self$type <- type
@@ -53,19 +56,20 @@ instat_calculation <- R6::R6Class(
       self$save <- save
       self$before <- before
       self$adjacent_column <- adjacent_column
+      self$param_list <- param_list
     },
-    
-    function_exp = "",
-    type = "",
     name = "",
     result_name = "",
     result_data_frame = "",
+    type = "",
     manipulations = list(),
     sub_calculations = list(),
+    function_exp = "",
     calculated_from = list(),
     save = 0,
     before = FALSE,
     adjacent_column = "",
+    param_list = list(),
     
     #' @description Clone the data
     #' @param ... Additional methods to add to the function.
@@ -75,7 +79,9 @@ instat_calculation <- R6::R6Class(
                                     name = self$name, result_name = self$result_name, 
                                     manipulations = lapply(self$manipulations, function(x) x$data_clone()), 
                                     sub_calculations = lapply(self$sub_calculations, function(x) x$data_clone()),
-                                    calculated_from = self$calculated_from, save = self$save)
+                                    calculated_from = self$calculated_from, save = self$save,
+                                    param_list = self$param_list)
+      # adjacent column / before to be in here?
       return(ret)
     },
     

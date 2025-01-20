@@ -37,33 +37,32 @@ calculation <- R6::R6Class("calculation",
                                                    calculated_from = c(), is_recalculable = TRUE,
                                                    sub_calculations = list(), type = "", filter_conditions = list(),
                                                    filters = list(), name = "") {
-                               self$function_name <- function_name
-                               self$parameters <- parameters
-                               self$calculated_from <- calculated_from
-                               self$is_recalculable <- is_recalculable
-                               self$sub_calculations <- sub_calculations
-                               self$type <- type
-                               self$name <- name
-                               self$filter_conditions <- filter_conditions
-                               self$filters <- filters
+                               self$function_name = function_name
+                               self$parameters = parameters
+                               self$calculated_from = c()
+                               self$is_recalculable = is_recalculable
+                               self$sub_calculations = sub_calculations
+                               self$type = type
+                               self$name = name
+                               self$filter_conditions = filter_conditions
+                               self$filters = filters
                              },
-                             
                              function_name = "",
                              parameters = list(), 
                              calculated_from = c(),
                              is_recalculable = TRUE,
                              sub_calculations = list(),
-                             type = "",
                              filter_conditions = list(),
                              filters = list(),
                              name = "",
+                             type = "",
                              
                              #' @description Add a sub-calculation.
                              #' 
                              #' @param sub_calculation An object representing the sub-calculation to add.
                              #' @param name Character. The name of the sub-calculation.
                              add_sub_calculation = function(sub_calculation, name) {
-                               self$sub_calculations[[name]] <- sub_calculation
+                               sub_calculations[[name]] <- sub_calculation
                              },
                              
                              #' @description Clone the data.

@@ -43,6 +43,8 @@ A class to store calculations.
 \item{\code{before}}{A boolean indicating if the calculation should be performed before others.}
 
 \item{\code{adjacent_column}}{The name of the adjacent column.}
+
+\item{\code{param_list}}{Additional parameters to read into the calculation, e.g., \code{.drop = TRUE} for \code{by} calculation.}
 }
 \if{html}{\out{</div>}}
 }
@@ -72,7 +74,8 @@ Initialise the instat_calculation class
   calculated_from = list(),
   save = 0,
   before = FALSE,
-  adjacent_column = ""
+  adjacent_column = "",
+  param_list = list()
 )}\if{html}{\out{</div>}}
 }
 
@@ -100,6 +103,8 @@ Initialise the instat_calculation class
 \item{\code{before}}{A boolean indicating if the calculation should be performed before others.}
 
 \item{\code{adjacent_column}}{The name of the adjacent column.}
+
+\item{\code{param_list}}{Additional parameters to read into the calculation, e.g., \code{.drop = TRUE} for \code{by} calculation.}
 }
 \if{html}{\out{</div>}}
 }
