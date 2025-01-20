@@ -1,6 +1,6 @@
 Package: instatCalculations
 Title: Calculation system used in R-Instat
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Danny", "Parsons", , role = "aut"),
     person("Lily", "Clements", , "lily@idems.international", role = "cre"))
