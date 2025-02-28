@@ -4,14 +4,16 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-#
-```
-
 # instatCalculations
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/IDEMSInternational/instatCalculations/workflows/R-CMD-check/badge.svg)](https://github.com/IDEMSInternational/instatCalculations/actions)
+[![Codecov test coverage](https://codecov.io/gh/IDEMSInternational/instatCalculations/branch/main/graph/badge.svg)](https://app.codecov.io/gh/IDEMSInternational/instatCalculations?branch=main)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![license](https://img.shields.io/badge/license-LGPL%20(%3E=%203)-lightgrey.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
 <!-- badges: end -->
 
 This repository contains R6 classes and supporting functionality for the calculation system used in [R-Instat](https://github.com/IDEMSInternational/R-Instat). This package serves as a core component of the R-Instat calculation system.

@@ -5,8 +5,15 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/IDEMSInternational/instatCalculations/workflows/R-CMD-check/badge.svg)](https://github.com/IDEMSInternational/instatCalculations/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/IDEMSInternational/instatCalculations/branch/main/graph/badge.svg)](https://app.codecov.io/gh/IDEMSInternational/instatCalculations?branch=main)
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![license](https://img.shields.io/badge/license-LGPL%20(%3E=%203)-lightgrey.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
 <!-- badges: end -->
 
 This repository contains R6 classes and supporting functionality for the
@@ -28,37 +35,30 @@ devtools::install_github("IDEMSInternational/instatCalculations")
 
     ## Downloading GitHub repo IDEMSInternational/instatCalculations@HEAD
 
-    ## rlang  (1.1.4 -> 1.1.5 ) [CRAN]
-    ## pillar (1.9.0 -> 1.10.1) [CRAN]
+    ## rlang (1.1.4 -> 1.1.5) [CRAN]
+    ## cli   (3.6.3 -> 3.6.4) [CRAN]
 
-    ## Installing 2 packages: rlang, pillar
+    ## Installing 2 packages: rlang, cli
 
-    ## Installing packages into 'C:/Users/lclem/AppData/Local/Temp/RtmpkFiFzS/temp_libpath2ac422ec4b41'
+    ## Installing packages into 'C:/Users/lclem/AppData/Local/Temp/RtmpYLkjmm/temp_libpatha288168f417a'
     ## (as 'lib' is unspecified)
 
-    ## 
-    ##   There is a binary version available but the source version is later:
-    ##       binary source needs_compilation
-    ## rlang  1.1.4  1.1.5              TRUE
-    ## 
-    ## package 'pillar' successfully unpacked and MD5 sums checked
+    ## package 'rlang' successfully unpacked and MD5 sums checked
+    ## package 'cli' successfully unpacked and MD5 sums checked
     ## 
     ## The downloaded binary packages are in
-    ##  C:\Users\lclem\AppData\Local\Temp\Rtmp0wtci6\downloaded_packages
-
-    ## installing the source package 'rlang'
-
+    ##  C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\downloaded_packages
     ## ── R CMD build ─────────────────────────────────────────────────────────────────
-    ##       ✔  checking for file 'C:\Users\lclem\AppData\Local\Temp\Rtmp0wtci6\remotes30042acc49df\IDEMSInternational-instatCalculations-94811d0/DESCRIPTION'
-    ##       ─  preparing 'instatCalculations':
+    ##          checking for file 'C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\remotes12f446cee15d1\IDEMSInternational-instatCalculations-328b93f/DESCRIPTION' ...  ✔  checking for file 'C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\remotes12f446cee15d1\IDEMSInternational-instatCalculations-328b93f/DESCRIPTION' (513ms)
+    ##       ─  preparing 'instatCalculations': (440ms)
     ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   ✔  checking DESCRIPTION meta-information
-    ##       ─  checking for LF line-endings in source and make files and shell scripts
+    ##       ─  checking for LF line-endings in source and make files and shell scripts (506ms)
     ##   ─  checking for empty or unneeded directories
-    ##       ─  building 'instatCalculations_0.1.2.tar.gz'
+    ##       ─  building 'instatCalculations_0.1.3.tar.gz'
     ##      
     ## 
 
-    ## Installing package into 'C:/Users/lclem/AppData/Local/Temp/RtmpkFiFzS/temp_libpath2ac422ec4b41'
+    ## Installing package into 'C:/Users/lclem/AppData/Local/Temp/RtmpYLkjmm/temp_libpatha288168f417a'
     ## (as 'lib' is unspecified)
 
 ## Contributing
