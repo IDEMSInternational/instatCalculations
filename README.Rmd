@@ -22,7 +22,7 @@ This repository contains R6 classes and supporting functionality for the calcula
 
 You can install the development version of instatCalculations from [GitHub](https://github.com/) with:
 
-```{r}
+```{r, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("IDEMSInternational/instatCalculations")
 ```

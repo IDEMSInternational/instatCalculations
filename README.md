@@ -31,36 +31,6 @@ You can install the development version of instatCalculations from
 devtools::install_github("IDEMSInternational/instatCalculations")
 ```
 
-    ## Using GitHub PAT from the git credential store.
-
-    ## Downloading GitHub repo IDEMSInternational/instatCalculations@HEAD
-
-    ## rlang (1.1.4 -> 1.1.5) [CRAN]
-    ## cli   (3.6.3 -> 3.6.4) [CRAN]
-
-    ## Installing 2 packages: rlang, cli
-
-    ## Installing packages into 'C:/Users/lclem/AppData/Local/Temp/RtmpYLkjmm/temp_libpatha288168f417a'
-    ## (as 'lib' is unspecified)
-
-    ## package 'rlang' successfully unpacked and MD5 sums checked
-    ## package 'cli' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\downloaded_packages
-    ## ── R CMD build ─────────────────────────────────────────────────────────────────
-    ##          checking for file 'C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\remotes12f446cee15d1\IDEMSInternational-instatCalculations-328b93f/DESCRIPTION' ...  ✔  checking for file 'C:\Users\lclem\AppData\Local\Temp\RtmpOOtWC5\remotes12f446cee15d1\IDEMSInternational-instatCalculations-328b93f/DESCRIPTION' (513ms)
-    ##       ─  preparing 'instatCalculations': (440ms)
-    ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   ✔  checking DESCRIPTION meta-information
-    ##       ─  checking for LF line-endings in source and make files and shell scripts (506ms)
-    ##   ─  checking for empty or unneeded directories
-    ##       ─  building 'instatCalculations_0.1.3.tar.gz'
-    ##      
-    ## 
-
-    ## Installing package into 'C:/Users/lclem/AppData/Local/Temp/RtmpYLkjmm/temp_libpatha288168f417a'
-    ## (as 'lib' is unspecified)
-
 ## Contributing
 
 We welcome contributions to improve this package! To contribute:
