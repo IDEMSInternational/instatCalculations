@@ -110,3 +110,9 @@ instat_calculation <- R6::R6Class(
     }
   )
 )
+
+## Workaround an R CMD check false positive
+ignore_unused_imports <- function() {
+  R6::R6Class
+  dplyr::dplyr_row_slice
+}
