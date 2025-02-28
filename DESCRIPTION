@@ -4,7 +4,7 @@ Version: 0.1.3
 Authors@R: c(
     person("Danny", "Parsons", , role = "aut"),
     person("Lily", "Clements", , "lily@idems.international", role = "cre"))
-Description: Functions used in the calculation system used in R-Instat.
+Description: Functions used in the calculation system in R-Instat.
 License: LGPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
