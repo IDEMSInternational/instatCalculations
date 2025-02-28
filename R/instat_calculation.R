@@ -97,9 +97,7 @@ instat_calculation <- R6::R6Class(
           }
         }
       }
-      for(sub_calc in self$sub_calculations) {
-        depens <- sub_calc$get_dependencies(depens)
-      }
+      for(sub_calc in self$sub_calculations) depens <- sub_calc$get_dependencies(depens)
       for(j in seq_along(self$calculated_from)) {
         ind <- which(depens == self$calculated_from[[j]])
         if(length(ind) == 0 || names(depens)[ind] != names(self$calculated_from)[j]) {
@@ -112,7 +110,6 @@ instat_calculation <- R6::R6Class(
 )
 
 ## Workaround an R CMD check false positive
-ignore_unused_imports <- function() {
-  R6::R6Class
-  dplyr::dplyr_row_slice
+ignore_unused_imports <- function(){
+  R6::R6Class; dplyr::dplyr_row_slice
 }
