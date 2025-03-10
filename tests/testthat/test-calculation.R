@@ -34,7 +34,7 @@ test_that("data_clone method creates an identical copy", {
     name = "calc2"
   )
   
-  cloned_calc <- calc$data_clone()
+  cloned_calc <- calc$data_clone() 
   
   expect_equal(cloned_calc$function_name, calc$function_name)
   expect_equal(cloned_calc$parameters, calc$parameters)
@@ -45,6 +45,7 @@ test_that("data_clone method creates an identical copy", {
   expect_equal(cloned_calc$filter_conditions, calc$filter_conditions)
   expect_equal(cloned_calc$filters, calc$filters)
   expect_equal(cloned_calc$name, calc$name)
+  
   # Ensure it's a different object
   expect_false(identical(cloned_calc, calc))
 })
