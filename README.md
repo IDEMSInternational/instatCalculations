@@ -58,7 +58,7 @@ types such as:
 
 A full tutorial is available as a vignette: [Understanding the R-Instat
 Calculation
-System](https://idemsinternational.github.io/instatCalculations/vignettes/inst/instat_calculation.pdf)
+System](https://github.com/IDEMSInternational/instatCalculations/blob/main/vignettes/inst/instat_calculation.pdf)
 
 Or view it within R after installing the package with vignettes:
 
