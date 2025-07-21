@@ -1,6 +1,9 @@
 ---
 title: "Understanding the R-Instat Calculation System"
-output: rmarkdown::html_vignette
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 vignette: >
   %\VignetteIndexEntry{Understanding the R-Instat Calculation System}
   %\VignetteEngine{knitr::rmarkdown}
