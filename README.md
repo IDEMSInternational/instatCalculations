@@ -16,19 +16,58 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 [![license](https://img.shields.io/badge/license-LGPL%20(%3E=%203)-lightgrey.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
 <!-- badges: end -->
 
-This repository contains R6 classes and supporting functionality for the
-calculation system used in
-[R-Instat](https://github.com/IDEMSInternational/R-Instat). This package
-serves as a core component of the R-Instat calculation system.
+The `instatCalculations` package defines R6 classes and supporting
+functionality for the calculation system in R-Instat. It enables
+structured, modular, and reproducible workflows based on tidyverse-like
+logic but with full metadata integration and support for linked
+datasets.
 
 ## Installation
 
-You can install the development version of instatCalculations from
-[GitHub](https://github.com/) with:
+You can install the development version from GitHub:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("IDEMSInternational/instatCalculations")
+```
+
+## What is the calculation system?
+
+This package provides the core engine behind R-Instat’s flexible
+calculation framework. It allows for:
+
+- Multi-step calculation pipelines
+- Reusable and composable calculations
+- Integration with metadata, grouping, and filters
+- Support for linked datasets and summary workflows, which in turn
+  encourages working with multilevel data.
+
+Each calculation is represented by an instat_calculation object, with
+types such as:
+
+| Type            | Equivalent Function | Purpose                        |
+|-----------------|---------------------|--------------------------------|
+| `"calculation"` | `mutate()`          | Create new columns             |
+| `"filter"`      | `filter()`          | Select rows                    |
+| `"summary"`     | `summarise()`       | Create summaries               |
+| `"by"`          | `group_by()`        | Group before summarising       |
+| `"sort"`        | `arrange()`         | Sort rows                      |
+| `"combination"` | *(meta-type)*       | Bundle multiple steps together |
+
+## Learn More
+
+A full tutorial is available as a vignette: [Understanding the R-Instat
+Calculation
+System](https://idemsinternational.github.io/instatCalculations/articles/instat_calculation.html)
+
+Or view it within R after installing the package with vignettes:
+
+``` r
+# Build with vignettes
+devtools::install(build_vignettes = TRUE)
+
+# View available vignettes
+browseVignettes(package = "instatCalculations")
 ```
 
 ## Contributing
@@ -46,9 +85,9 @@ LICENSE file for details.
 
 ## About
 
-This package is developed and maintained by IDEMS International as part
-of the R-Instat project. For more information, visit our
-[website](https://idems.international/).
+This package is developed and maintained by [IDEMS
+International](https://idems.international/) as part of the
+[R-Instat](https://github.com/IDEMSInternational/R-Instat) project.
 
 ------------------------------------------------------------------------
 
